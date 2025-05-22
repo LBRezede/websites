@@ -1,0 +1,291 @@
+/* Estilos Responsivos */
+
+/* Tablets e dispositivos médios */
+@media (max-width: 992px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-content {
+        order: 1;
+    }
+    
+    .hero-image {
+        order: 0;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .buzios-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .buzios-image {
+        margin-top: var(--spacing-md);
+    }
+    
+    .case-study {
+        grid-template-columns: 1fr;
+    }
+    
+    .case-study:nth-child(even) .case-content,
+    .case-study:nth-child(even) .case-image,
+    .case-study .case-content,
+    .case-study .case-image {
+        order: 0;
+    }
+    
+    .case-image {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        order: 2;
+    }
+    
+    .contact-form {
+        order: 1;
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+/* Dispositivos móveis */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .header .container {
+        flex-direction: column;
+    }
+    
+    .logo {
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .main-nav {
+        margin: var(--spacing-sm) 0;
+    }
+    
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-sm);
+    }
+    
+    .cta-header {
+        margin-top: var(--spacing-sm);
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .portfolio-grid,
+    .testimonials-grid,
+    .services-grid,
+    .portfolio-full-grid,
+    .pricing-grid,
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-legal {
+        justify-content: center;
+    }
+    
+    .process-step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-number {
+        margin: 0 auto var(--spacing-sm);
+    }
+    
+    .case-meta {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .portfolio-filters {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Dispositivos muito pequenos */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .buzios-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .case-metrics {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-author {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .testimonial-author img {
+        margin: 0 auto var(--spacing-xs);
+    }
+    
+    .contact-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-icon {
+        margin: 0 auto var(--spacing-sm);
+    }
+    
+    .service-hero h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Ajustes para telas muito grandes */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    html {
+        font-size: 18px;
+    }
+}
+
+/* Ajustes para modo escuro (preferencialmente) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-color: #1a1a2e;
+        --text-color: #e6e6e6;
+        --text-light: #b3b3b3;
+        --border-color: #333333;
+    }
+    
+    .header,
+    .service-card,
+    .testimonial-card,
+    .pricing-card,
+    .contact-form,
+    .contact-card,
+    .stat-item,
+    .process-step,
+    .faq-item,
+    .bg-white {
+        background-color: #16213e;
+    }
+    
+    .footer {
+        background-color: #0f3460;
+    }
+    
+    .why-buzios,
+    .testimonials,
+    .pricing,
+    .contact,
+    .faq-question,
+    .case-results,
+    .bg-light {
+        background-color: #1a1a2e;
+    }
+    
+    .btn-outline {
+        border-color: var(--primary-color);
+    }
+    
+    .form-control {
+        background-color: #16213e;
+        border-color: #333333;
+        color: var(--text-color);
+    }
+    
+    .form-control::placeholder {
+        color: #666666;
+    }
+}
+
+/* Animações para elementos ao entrar na viewport */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ajustes de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .fade-in {
+        transition: none;
+    }
+}
+
+/* Suporte para alto contraste */
+@media (forced-colors: active) {
+    .btn,
+    .service-card,
+    .testimonial-card,
+    .portfolio-item,
+    .pricing-card {
+        border: 1px solid;
+    }
+}
